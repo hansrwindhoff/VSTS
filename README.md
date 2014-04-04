@@ -1,4 +1,6 @@
 NGTS
 ====
 
-AngulasJS in Typescript
+AngularJS in Typescript
+
+
