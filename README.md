@@ -1,6 +1,6 @@
-NGTS
+VSTS
 ====
 
-AngularJS in Typescript
+ Typescript with Visual Studio
 
 
