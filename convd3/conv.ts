@@ -1,81 +1,76 @@
+///// <reference path="d3.d.ts"/>
+declare var d3;
 
 
+var width = 960,
+    height = 500;
 
-var maxRadius = 32, // maximum radius of circle
-  padding = 1, // padding between circles; also minimum radius
-  margin = { top: -maxRadius, right: -maxRadius, bottom: -maxRadius, left: -maxRadius },
-  width = 960 - margin.left - margin.right,
-  height = 500 - margin.top - margin.bottom;
+var nodes = d3.range(200).map(function() { return {radius: Math.random() * 12 + 4};}),
+    root = nodes[0],
+    color = d3.scale.category10();
 
-var k = 1, // initial number of candidates to consider per circle
-  m = 10, // initial number of circles to add per frame
-  n = 2500, // remaining number of circles to add
-  newCircle = bestCircleGenerator(maxRadius, padding);
+root.radius = 0;
+root.fixed = true;
+
+var force = d3.layout.force()
+    .gravity(0.05)
+    .charge(function(d, i) { return i ? 0 : -2000; })
+    .nodes(nodes)
+    .size([width, height]);
+
+force.start();
 
 var svg = d3.select("body").append("svg")
-  .attr("width", width)
-  .attr("height", height)
-  .append("g")
-  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("width", width)
+    .attr("height", height);
 
-d3.timer(function () {
-  for (var i = 0; i < m && --n >= 0; ++i) {
-    var circle = newCircle(k);
+svg.selectAll("circle")
+    .data(nodes.slice(1))
+  .enter().append("circle")
+    .attr("r", function(d) { return d.radius; })
+    .style("fill", function(d, i) { return color(i % 3); });
 
-    svg.append("circle")
-      .attr("cx", circle[0])
-      .attr("cy", circle[1])
-      .attr("r", 0)
-      .style("fill-opacity", (Math.random() + .5) / 2)
-      .transition()
-      .attr("r", circle[2]);
+force.on("tick", function(e) {
+  var q = d3.geom.quadtree(nodes),
+      i = 0,
+      n = nodes.length;
 
-    // As we add more circles, generate more candidates per circle.
-    // Since this takes more effort, gradually reduce circles per frame.
-    if (k < 500) k *= 1.01, m *= .998;
-  }
-  return !n;
+  while (++i < n) q.visit(collide(nodes[i]));
+
+  svg.selectAll("circle")
+      .attr("cx", function(d) { return d.x; })
+      .attr("cy", function(d) { return d.y; });
 });
 
-function bestCircleGenerator(maxRadius, padding) {
-  var quadtree = d3.geom.quadtree().extent([[0, 0], [width, height]])([]),
-    searchRadius = maxRadius * 2,
-    maxRadius2 = maxRadius * maxRadius;
+svg.on("mousemove", function() {
+  var p1 = d3.mouse(this);
+  root.px = p1[0];
+  root.py = p1[1];
+  force.resume();
+});
 
-  return function (k) {
-    var bestX, bestY, bestDistance = 0;
-
-    for (var i = 0; i < k || bestDistance < padding; ++i) {
-      var x = Math.random() * width,
-        y = Math.random() * height,
-        rx1 = x - searchRadius,
-        rx2 = x + searchRadius,
-        ry1 = y - searchRadius,
-        ry2 = y + searchRadius,
-        minDistance = maxRadius; // minimum distance for this candidate
-
-      quadtree.visit(function (quad, x1, y1, x2, y2) {
-        if (p = quad.point) {
-          var p,
-            dx = x - p[0],
-            dy = y - p[1],
-            d2 = dx * dx + dy * dy,
-            r2 = p[2] * p[2];
-          if (d2 < r2) return minDistance = 0, true; // within a circle
-          var d = Math.sqrt(d2) - p[2];
-          if (d < minDistance) minDistance = d;
-        }
-        return !minDistance || x1 > rx2 || x2 < rx1 || y1 > ry2 || y2 < ry1; // or outside search radius
-      });
-
-      if (minDistance > bestDistance) bestX = x, bestY = y, bestDistance = minDistance;
+function collide(node) {
+  var r = node.radius + 16,
+      nx1 = node.x - r,
+      nx2 = node.x + r,
+      ny1 = node.y - r,
+      ny2 = node.y + r;
+  return function(quad, x1, y1, x2, y2) {
+    if (quad.point && (quad.point !== node)) {
+      var x = node.x - quad.point.x,
+          y = node.y - quad.point.y,
+          l = Math.sqrt(x * x + y * y),
+          r = node.radius + quad.point.radius;
+      if (l < r) {
+        l = (l - r) / l * .5;
+        node.x -= x *= l;
+        node.y -= y *= l;
+        quad.point.x += x;
+        quad.point.y += y;
+      }
     }
-
-    var best = [bestX, bestY, bestDistance - padding];
-    quadtree.add(best);
-    return best;
+    return x1 > nx2 || x2 < nx1 || y1 > ny2 || y2 < ny1;
   };
 }
 
-//declare var d3;
-/// <reference path="d3.d.ts"/>
+

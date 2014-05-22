@@ -3260,7 +3260,7 @@ declare module D3 {
         }
 
         export interface Quadtree {
-            extent: (any)=>any;// hans
+            
             /**
             * Constructs a new quadtree for the specified array of points.
             */
