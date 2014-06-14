@@ -6,6 +6,7 @@ var __extends = this.__extends || function (d, b) {
 };
 var ns;
 (function (ns) {
+    ns.num;
     var Building = (function () {
         function Building() {
         }
@@ -35,4 +36,3 @@ myhouse.material = "brick";
 console.log(myhouse);
 
 console.log('end');
-//# sourceMappingURL=06 class.js.map

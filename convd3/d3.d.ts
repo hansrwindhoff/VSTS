@@ -1074,6 +1074,8 @@ declare module D3 {
         }
 
         export interface TreeLayout {
+            //reverse: ()=> any; hans
+
             /**
             * Gets or sets the sort order of sibling nodes for the layout using the specified comparator function
             */

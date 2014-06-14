@@ -23,16 +23,19 @@ var t3;
 // var t3: Ifct3<number[], I2ndmyextendedObj>; // try this
 // and because it is typed already ts knows that the function that is being assigned to t3
 // has the above types
-//t3 = function (d, cb) {
-//  var ret: I2ndmyextendedObj = <any>d;// this is like casting in C
-//  ret.sumOverAGreaterZero= cb(d);// push f1 on cb
-//  //ret.testedCondition = cb(d);
-//  return ret;
-//};
+t3 = function (d, cb) {
+    var ret = d;
+    ret.sumOverAGreaterZero = cb(d); // push f1 on cb
+
+    //ret.testedCondition = cb(d);
+    return ret;
+};
+
 //ts knows that v is constraint to the base type interface,
 //try putting it to w, that doesnt work,  because w is not of type ImyextendedObj
 //try putting {d:[1,2,3,4]} which doesnt fullfill the type requirement
 //but u works
+// now we are calling it
 var x = t3(u, function (d) {
     var sumoverarry = 0;
 
@@ -45,7 +48,7 @@ var x = t3(u, function (d) {
     //return {label:"sumoverAGreaterZero", condition:ret};
 });
 
-// now we are calling it
+
 console.log(x);
 
 // // another axample for an implementation and the need to refactor

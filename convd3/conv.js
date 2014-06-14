@@ -1,109 +1,79 @@
-var margin = { top: 20, right: 120, bottom: 20, left: 120 }, width = 960 - margin.right - margin.left, height = 800 - margin.top - margin.bottom;
 
-var i = 0, duration = 750, root;
+// http://blog.thomsonreuters.com/index.php/mobile-patent-suits-graphic-of-the-day/
+var links = [
+    { source: "Microsoft", target: "Amazon", type: "licensing" },
+    { source: "Microsoft", target: "HTC", type: "licensing" },
+    { source: "Samsung", target: "Apple", type: "suit" },
+    { source: "Motorola", target: "Apple", type: "suit" },
+    { source: "Nokia", target: "Apple", type: "resolved" },
+    { source: "HTC", target: "Apple", type: "suit" },
+    { source: "Kodak", target: "Apple", type: "suit" },
+    { source: "Microsoft", target: "Barnes & Noble", type: "suit" },
+    { source: "Microsoft", target: "Foxconn", type: "suit" },
+    { source: "Oracle", target: "Google", type: "suit" },
+    { source: "Apple", target: "HTC", type: "suit" },
+    { source: "Microsoft", target: "Inventec", type: "suit" },
+    { source: "Samsung", target: "Kodak", type: "resolved" },
+    { source: "LG", target: "Kodak", type: "resolved" },
+    { source: "RIM", target: "Kodak", type: "suit" },
+    { source: "Sony", target: "LG", type: "suit" },
+    { source: "Kodak", target: "LG", type: "resolved" },
+    { source: "Apple", target: "Nokia", type: "resolved" },
+    { source: "Qualcomm", target: "Nokia", type: "resolved" },
+    { source: "Apple", target: "Motorola", type: "suit" },
+    { source: "Microsoft", target: "Motorola", type: "suit" },
+    { source: "Motorola", target: "Microsoft", type: "suit" },
+    { source: "Huawei", target: "ZTE", type: "suit" },
+    { source: "Ericsson", target: "ZTE", type: "suit" },
+    { source: "Kodak", target: "Samsung", type: "resolved" },
+    { source: "Apple", target: "Samsung", type: "suit" },
+    { source: "Kodak", target: "RIM", type: "suit" },
+    { source: "Nokia", target: "Qualcomm", type: "suit" }
+];
 
-var tree = d3.layout.tree().size([height, width]);
+var nodes = {};
 
-var diagonal = d3.svg.diagonal().projection(function (d) {
-    return [d.y, d.x];
+// Compute the distinct nodes from the links.
+links.forEach(function (link) {
+    link.source = nodes[link.source] || (nodes[link.source] = { name: link.source });
+    link.target = nodes[link.target] || (nodes[link.target] = { name: link.target });
 });
 
-var svg = d3.select("body").append("svg").attr("width", width + margin.right + margin.left).attr("height", height + margin.top + margin.bottom).append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+var width = 960, height = 500;
 
-d3.json("./flare.json", function (error, flare) {
-    root = flare;
-    root.x0 = height / 2;
-    root.y0 = 0;
+var force = d3.layout.force().nodes(d3.values(nodes)).links(links).size([width, height]).linkDistance(60).charge(-300).on("tick", tick).start();
 
-    function collapse(d) {
-        if (d.children) {
-            d._children = d.children;
-            d._children.forEach(collapse);
-            d.children = null;
-        }
-    }
+var svg = d3.select("body").append("svg").attr("width", width).attr("height", height);
 
-    root.children.forEach(collapse);
-    update(root);
+// Per-type markers, as they don't inherit styles.
+svg.append("defs").selectAll("marker").data(["suit", "licensing", "resolved"]).enter().append("marker").attr("id", function (d) {
+    return d;
+}).attr("viewBox", "0 -5 10 10").attr("refX", 15).attr("refY", -1.5).attr("markerWidth", 6).attr("markerHeight", 6).attr("orient", "auto").append("path").attr("d", "M0,-5L10,0L0,5");
+
+var path = svg.append("g").selectAll("path").data(force.links()).enter().append("path").attr("class", function (d) {
+    return "link " + d.type;
+}).attr("marker-end", function (d) {
+    return "url(#" + d.type + ")";
 });
 
-d3.select(self.frameElement).style("height", "800px");
+var circle = svg.append("g").selectAll("circle").data(force.nodes()).enter().append("circle").attr("r", 6).call(force.drag);
 
-function update(source) {
-    var nodes = tree.nodes(root).reverse(), links = tree.links(nodes);
+var text = svg.append("g").selectAll("text").data(force.nodes()).enter().append("text").attr("x", 8).attr("y", ".31em").text(function (d) {
+    return d.name;
+});
 
-    nodes.forEach(function (d) {
-        d.y = d.depth * 180;
-    });
-
-    var node = svg.selectAll("g.node").data(nodes, function (d) {
-        return d.id || (d.id = ++i);
-    });
-
-    var nodeEnter = node.enter().append("g").attr("class", "node").attr("transform", function (d) {
-        return "translate(" + source.y0 + "," + source.x0 + ")";
-    }).on("click", click);
-
-    nodeEnter.append("circle").attr("r", 1e-6).style("fill", function (d) {
-        return d._children ? "lightsteelblue" : "#fff";
-    });
-
-    nodeEnter.append("text").attr("x", function (d) {
-        return d.children || d._children ? -10 : 10;
-    }).attr("dy", ".35em").attr("text-anchor", function (d) {
-        return d.children || d._children ? "end" : "start";
-    }).text(function (d) {
-        return d.name;
-    }).style("fill-opacity", 1e-6);
-
-    var nodeUpdate = node.transition().duration(duration).attr("transform", function (d) {
-        return "translate(" + d.y + "," + d.x + ")";
-    });
-
-    nodeUpdate.select("circle").attr("r", 4.5).style("fill", function (d) {
-        return d._children ? "lightsteelblue" : "#fff";
-    });
-
-    nodeUpdate.select("text").style("fill-opacity", 1);
-
-    var nodeExit = node.exit().transition().duration(duration).attr("transform", function (d) {
-        return "translate(" + source.y + "," + source.x + ")";
-    }).remove();
-
-    nodeExit.select("circle").attr("r", 1e-6);
-
-    nodeExit.select("text").style("fill-opacity", 1e-6);
-
-    var link = svg.selectAll("path.link").data(links, function (d) {
-        return d.target.id;
-    });
-
-    link.enter().insert("path", "g").attr("class", "link").attr("d", function (d) {
-        var o = { x: source.x0, y: source.y0 };
-        return diagonal({ source: o, target: o });
-    });
-
-    link.transition().duration(duration).attr("d", diagonal);
-
-    link.exit().transition().duration(duration).attr("d", function (d) {
-        var o = { x: source.x, y: source.y };
-        return diagonal({ source: o, target: o });
-    }).remove();
-
-    nodes.forEach(function (d) {
-        d.x0 = d.x;
-        d.y0 = d.y;
-    });
+// Use elliptical arc path segments to doubly-encode directionality.
+function tick() {
+    path.attr("d", linkArc);
+    circle.attr("transform", transform);
+    text.attr("transform", transform);
 }
 
-function click(d) {
-    if (d.children) {
-        d._children = d.children;
-        d.children = null;
-    } else {
-        d.children = d._children;
-        d._children = null;
-    }
-    update(d);
+function linkArc(d) {
+    var dx = d.target.x - d.source.x, dy = d.target.y - d.source.y, dr = Math.sqrt(dx * dx + dy * dy);
+    return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
 }
-//# sourceMappingURL=conv.js.map
+
+function transform(d) {
+    return "translate(" + d.x + "," + d.y + ")";
+}

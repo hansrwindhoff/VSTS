@@ -7,6 +7,7 @@ var T1;
 
     // var t1:Idvec;
     //
-    //t1= { };// this doesnt work
+    t1 = { dx: 34, dy: 0, dz: 4, dt: 98 }; // this doesnt work
+
     console.log('end');
 })(T1 || (T1 = {}));

@@ -10,9 +10,9 @@ class Messenger {
 		//var _this=this;
 
 		setTimeout(
-			//() => console.log(this.message), 500); 
-		function() {console.log(this.message);
-			console.log(this);}, 500); 
+		() => console.log(this.message), 500); 
+		//function() {console.log(this.message);
+			//console.log(this);}, 500); 
 		} 
 	}
 

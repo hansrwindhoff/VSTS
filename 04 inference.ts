@@ -1,4 +1,4 @@
-// Example : inference with generics
+// Example : inference with generics 
 // lets define some interfaces
 //... a base interface
 interface ImybaseObj {
@@ -29,14 +29,14 @@ interface I2ndmyextendedObj extends ImyextendedObj  {
 
 
 // now we define two function interfaces for  functions
-// that will consume the above interfaces , but only these 
+// that will consume objects having the above interfaces , but only these 
 // or possibly other interfaces that are at least derived from the base, a constraint
 // a function that takes an input parameter of type T and
 // a call back that itselft takes the same T and returns a bool
 // the function return a T 
-interface Ifct2<T extends ImybaseObj> {
-  (inputPara: T, cb: (d: T) => boolean): T;
-}
+//interface Ifct2<T extends ImybaseObj> {
+//  (inputPara: T, cb: (d: T) => boolean): T;
+//}
 
 
 // here the function takes two possibly different types, the second one is returned
@@ -65,34 +65,33 @@ var w = { a: [2, 3, 4] };
 // so here we type the var t3
 var t3: Ifct3<ImyextendedObj, I2ndmyextendedObj>; //ts knows that the type parameters are constraint 
                                                   //to the base type interface, 
-// var t3: Ifct3<number[], I2ndmyextendedObj>; // try this 
+ //var t3: Ifct3<number[], I2ndmyextendedObj>; // try this 
 
 // and because it is typed already ts knows that the function that is being assigned to t3
 // has the above types
-//t3 = function (d, cb) {
-//  var ret: I2ndmyextendedObj = <any>d;// this is like casting in C
-//  ret.sumOverAGreaterZero= cb(d);// push f1 on cb
-//  //ret.testedCondition = cb(d);
-//  return ret;
-//};
+t3 = (d, cb) => {
+  var ret: I2ndmyextendedObj = <any>d;// this is like casting in C
+  ret.sumOverAGreaterZero= cb(d);// push f1 on cb
+  //ret.testedCondition = cb(d);
+  return ret;
+};
 
 //ts knows that v is constraint to the base type interface, 
 //try putting it to w, that doesnt work,  because w is not of type ImyextendedObj
 //try putting {d:[1,2,3,4]} which doesnt fullfill the type requirement
 //but u works
-var x =  t3(u, function (d) {// is the sum over the array a greater zero?
-    var sumoverarry = 0;
+// ... now we are calling it
+var x =  t3(u, (d) =>{// is the sum over the array a greater zero?
+  var sumoverarry = 0;
     
-    sumoverarry= d.a.reduce(function ( prv,cur,i, theAr) {// try changing a => c
-     return prv+cur;
-     });
-    console.log(sumoverarry);
-    var ret =  sumoverarry > 0 ? true : false;
-    return ret;
-    //return {label:"sumoverAGreaterZero", condition:ret};
-    });
+  sumoverarry= d.a.reduce((prv,cur,i, theAr) => prv+cur); // try changing a => c
+  console.log(sumoverarry);
+  var ret =  sumoverarry > 0 ? true : false;
+  return ret;
+  //return {label:"sumoverAGreaterZero", condition:ret};
+});
 
-// now we are calling it
+
 console.log(x);
 
  

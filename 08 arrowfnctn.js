@@ -6,10 +6,12 @@ var Messenger = (function () {
     }
     Messenger.prototype.start = function () {
         //var _this=this;
+        var _this = this;
         setTimeout(function () {
-            console.log(this.message);
-            console.log(this);
+            return console.log(_this.message);
         }, 500);
+        //function() {console.log(this.message);
+        //console.log(this);}, 500);
     };
     return Messenger;
 })();

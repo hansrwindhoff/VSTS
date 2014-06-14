@@ -12,7 +12,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>a9e63906-64b6-4a54-bcc6-c67ce2315a4b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>13 getset.js</StartupFile>
+    <StartupFile>04 inference.js</StartupFile>
     <StartWebBrowser>False</StartWebBrowser>
     <SearchPath>
     </SearchPath>
