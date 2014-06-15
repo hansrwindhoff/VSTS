@@ -1,5 +1,5 @@
-///// <reference path="d3.d.ts"/>
-declare var d3;
+/// <reference path="d3.d.ts"/>
+//declare var d3;
 
 // http://blog.thomsonreuters.com/index.php/mobile-patent-suits-graphic-of-the-day/
 var links = [

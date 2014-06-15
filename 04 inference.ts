@@ -87,6 +87,7 @@ var x =  t3(u, (d) =>{// is the sum over the array a greater zero?
   sumoverarry= d.a.reduce((prv,cur,i, theAr) => prv+cur); // try changing a => c
   console.log(sumoverarry);
   var ret =  sumoverarry > 0 ? true : false;
+  //var ret =1;
   return ret;
   //return {label:"sumoverAGreaterZero", condition:ret};
 });

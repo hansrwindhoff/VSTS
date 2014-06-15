@@ -1,4 +1,5 @@
-
+/// <reference path="d3.d.ts"/>
+//declare var d3;
 // http://blog.thomsonreuters.com/index.php/mobile-patent-suits-graphic-of-the-day/
 var links = [
     { source: "Microsoft", target: "Amazon", type: "licensing" },
@@ -77,3 +78,4 @@ function linkArc(d) {
 function transform(d) {
     return "translate(" + d.x + "," + d.y + ")";
 }
+//# sourceMappingURL=conv.js.map

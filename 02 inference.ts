@@ -13,6 +13,9 @@ interface Idvec {
 
 // var t1:Idvec;
 //
+
+//
+//
 t1= {dx:34, dy:0,dz:4,dt:98 };// this doesnt work
 
   console.log('end');

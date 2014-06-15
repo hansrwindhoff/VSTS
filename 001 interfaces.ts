@@ -14,7 +14,6 @@ interface I2 extends I1
 
 var v1: I2;
 
-
 console.log('end');
 
 

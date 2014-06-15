@@ -1,5 +1,5 @@
 module ns{
-  export var num:number;
+   var num:number;
   export class Building
   {
     material:string;

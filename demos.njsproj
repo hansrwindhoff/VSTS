@@ -33,22 +33,24 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="00 arrowfnctn.ts" />
+    <Content Include="00 class.ts" />
+    <Content Include="00 enum.ts" />
+    <Content Include="00 namespace.ts" />
+    <Content Include="00 sanityts.js.map" />
     <Content Include="00 sanityts.ts" />
+    <Content Include="001 interfaces.ts" />
     <Content Include="01 inference.ts" />
-    <Content Include="01 interfaces.ts" />
     <Content Include="02 inference.ts" />
     <Content Include="02 typeassertion.ts" />
     <Content Include="03 inference.ts" />
     <Content Include="04 inference.d.ts" />
     <Content Include="04 inference.ts" />
-    <Content Include="05 namespace.ts" />
-    <Content Include="06 class.ts" />
-    <Content Include="07 enum.ts" />
-    <Content Include="08 arrowfnctn.ts" />
     <Content Include="09 extendexisting.ts" />
     <Content Include="10 prototypepolution.ts" />
     <Content Include="11 Primitives and wrappers.ts" />
     <Content Include="12 jsdoc.ts" />
+    <Content Include="13 getset.js.map" />
     <Content Include="13 getset.ts" />
     <Content Include="package.json" />
     <Content Include="README.md" />
@@ -60,6 +62,7 @@
     <Folder Include="Scripts\typings\node\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="00 sanityts.js" />
     <Compile Include="13 getset.js" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />

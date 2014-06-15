@@ -20,3 +20,4 @@ var t2;
     t1.aNumber = 42;
     console.log(t1.aNumber);
 })(t2 || (t2 = {}));
+//# sourceMappingURL=13 getset.js.map
