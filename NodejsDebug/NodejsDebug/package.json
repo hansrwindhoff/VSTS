@@ -8,6 +8,6 @@
     "email": ""
   },
   "dependencies": {
-    "readline-sync": "^0.4.7"
+    "readline-sync": "^0.4.8"
   }
 }
