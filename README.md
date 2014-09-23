@@ -1,6 +1,7 @@
 VSTS
 ====
 
- Typescript with Visual Studio
-
+ Typescript in Visual Studio
+ 
+ 
 
