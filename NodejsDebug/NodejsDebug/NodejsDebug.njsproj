@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>NodejsDebug</Name>
+    <RootNamespace>NodejsDebug</RootNamespace>
+    <ScriptArguments>
+    </ScriptArguments>
+    <NodeExeArguments>
+    </NodeExeArguments>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>552bd522-a4af-4133-b0a7-b2d80fc454f2</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>00arrowfnctn.js</StartupFile>
+    <StartWebBrowser>False</StartWebBrowser>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
+    <EnableTypeScript>true</EnableTypeScript>
+    <StartWebBrowser>False</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <TypeScriptCompile Include="001 interfaces.ts" />
+    <TypeScriptCompile Include="00arrowfnctn.ts" />
+    <TypeScriptCompile Include="00class.ts" />
+    <TypeScriptCompile Include="00enum.ts" />
+    <TypeScriptCompile Include="00sanityts.ts" />
+    <TypeScriptCompile Include="01inference.ts" />
+    <TypeScriptCompile Include="02typeassertion.ts" />
+    <TypeScriptCompile Include="03inference.ts" />
+    <TypeScriptCompile Include="04inference.ts" />
+    <TypeScriptCompile Include="09extendexisting.ts" />
+    <TypeScriptCompile Include="11Primitives and wrappers.ts" />
+    <TypeScriptCompile Include="13getset.ts" />
+    <TypeScriptCompile Include="closureshallow.ts" />
+    <TypeScriptCompile Include="complexClosure.ts" />
+    <TypeScriptCompile Include="debugme.ts" />
+    <TypeScriptCompile Include="inlineunitT.ts" />
+    <TypeScriptCompile Include="monads.ts" />
+    <TypeScriptCompile Include="newClosure.ts" />
+    <TypeScriptCompile Include="Scripts\typings\node\node.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Scripts\" />
+    <Folder Include="Scripts\typings\" />
+    <Folder Include="Scripts\typings\node\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="001 interfaces.js" />
+    <Compile Include="00arrowfnctn.js" />
+    <Compile Include="00class.js" />
+    <Compile Include="00enum.js" />
+    <Compile Include="00sanityts.js" />
+    <Compile Include="01inference.js" />
+    <Compile Include="03inference.js" />
+    <Compile Include="04inference.js" />
+    <Compile Include="11Primitives and wrappers.js" />
+    <Compile Include="13getset.js" />
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

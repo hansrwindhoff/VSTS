@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-<body> 
-</body>
-<script src="d3.v3.js"></script>
-<script>
- 
+///// <reference path="d3.d.ts"/>
+//declare var d3;
+
 var maxRadius = 32, // maximum radius of circle
     padding = 1, // padding between circles; also minimum radius
     margin = {top: -maxRadius, right: -maxRadius, bottom: -maxRadius, left: -maxRadius},
@@ -81,5 +77,3 @@ function bestCircleGenerator(maxRadius, padding) {
   };
 }
  
-</script>
-
