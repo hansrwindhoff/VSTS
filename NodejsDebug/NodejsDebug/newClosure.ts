@@ -4,14 +4,14 @@ function newClosure(someNum, someRef) {
     var anArray = [1,2,3];
     someRef.someVar ++;
     var ref = someRef;
-    return function(x) {
-        num += x;
-        anArray.push(num);
-        console.log
-        ('num: ' + num +
-            ' anArray ' + anArray.toString() +
-            ' ref.someVar ' + ref.someVar);
-      }
+    return x => {
+      num += x;
+      anArray.push(num);
+      console.log
+      ('num: ' + num +
+        ' anArray ' + anArray.toString() +
+        ' ref.someVar ' + ref.someVar);
+    }
 }
 var obj = {someVar: 4};
 var fn1 = newClosure(4, obj);

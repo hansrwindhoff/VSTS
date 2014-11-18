@@ -5,11 +5,11 @@ module ns {
     floors: number;
   }
 
-   class House extends Building {
+  export class House extends Building {
     bedrooms: number;
   }
 
-   var myHouse = new House();
+  var myHouse = new House();
   myHouse.bedrooms = 3;
   myHouse.floors = 1;
   myHouse.material = "brick";

@@ -7,15 +7,20 @@ module t2 {
 
     start() {
       setTimeout(
-        () => {
+
+        //() => {
+        //  console.log(this.message);
+        //  readlineSync.question('hit enter to exit? :');
+        //}
+
+        function () {
           console.log(this.message);
           readlineSync.question('hit enter to exit? :');
+
         }
+
+
         , 500);
-      //function() {
-      //  console.log(this.message);
-      //  
-      //}, 500); 
     }
   }
 

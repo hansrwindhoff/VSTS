@@ -1,5 +1,3 @@
-
-
 // Example : inference with generics
 // lets define some interfaces
 //... a base interface
@@ -35,15 +33,15 @@ interface I2ndmyextendedObj extends ImyextendedObj  {
 // or possibly other interfaces that are at least derived from the base, a constraint
 // a function that takes an input parameter of type T and
 // a call back that itselft takes the same T and returns a bool
-// the function returns a T
-interface Ifct2<T extends ImybaseObj> {
-  (inputPara: T, cb: (d: T) => boolean): T;
-}
+// the function return a T
+//interface Ifct2<T extends ImybaseObj> {
+//  (inputPara: T, cb: (d: T) => boolean): T;
+//}
 
 
 // here the function takes two possibly different types, the second one is returned
-interface Ifct3<T extends ImybaseObj, TU extends ImybaseObj> {
-  (inputPara: T, cb: (d: T) => boolean): TU;
+interface Ifct3<T extends ImybaseObj, U extends ImybaseObj> {
+  (inputPara: T, cb: (d: T) => boolean): U;
   //(inputPara: T, cb: (d: T) => ItestedCondition): U;
 
 }
@@ -98,15 +96,15 @@ var x =  t3(u, (d) =>{// is the sum over the array a greater zero?
 console.log(x);
 
 
- // another example for an implementation and the need to refactor
- //var y = t3(w, function (d) {
- var y = t3(u, d => {
-   var ret:boolean;
-   //d.b[0] > 0 ? ret = true : null; //w has no b
-   ret = (d.a[0] > 0 ? true : null); //this works
-   return ret;// ret is any here
-   //return {label:"firstelementGreaterZero", condition:ret};
- });
- console.log(y);
+// // another axample for an implementation and the need to refactor
+// //var y = t3(w, function (d) {
+// var y = t3(u, function (d) {
+//  var ret;
+//  //d.b[0] > 0 ? ret = true : null; //w has no b
+//  ret = d.a[0] > 0 ? true : null; //this works
+//  return ret;// ret is any here
+//  //return {label:"firstelementGreaterZero", condition:ret};
+// });
+// console.log(y);
 
 console.log('end');

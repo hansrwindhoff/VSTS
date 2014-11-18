@@ -1,3 +1,5 @@
+// compile with -- module AMD
+
 console.log("Start loading import.js");
 import myimport = require('./tobeimported');
 myimport.myLog(); 
