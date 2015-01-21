@@ -7,3 +7,5 @@ import myimport = require('./tobeimported');
 myimport.myLog(); 
 
 console.log("Done loading and calling import.js");
+
+
