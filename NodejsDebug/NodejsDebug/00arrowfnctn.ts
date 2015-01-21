@@ -1,3 +1,4 @@
+// es6
 module t2 {
   //lexically scoped  or dynamically scoped
   var readlineSync = require('readline-sync');
@@ -8,16 +9,15 @@ module t2 {
     start() {
       setTimeout(
 
-        //() => {
-        //  console.log(this.message);
-        //  readlineSync.question('hit enter to exit? :');
-        //}
-
-        function () {
+        () => {
           console.log(this.message);
           readlineSync.question('hit enter to exit? :');
-
         }
+
+        ////function () {
+        ////  console.log(this.message);
+        ////  readlineSync.question('hit enter to exit? :');
+        ////}
 
 
         , 500);

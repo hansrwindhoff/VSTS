@@ -19,9 +19,9 @@ module M1 {
  // var v1: M1.I2 = <any>{};
   var v1 = <M1.I2>{};
 
-  v1.address = "sdklmklmsdklfm";
+  v1.address = "1500 cherokee";
   v1.num = 5;
-  v1.hellostring = "helloworld";
+  v1.hellostring = "hello galvanize";
 
   console.log('end');
 

@@ -16,7 +16,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>552bd522-a4af-4133-b0a7-b2d80fc454f2</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>debugme.js</StartupFile>
+    <StartupFile>prototypechain.js</StartupFile>
     <StartWebBrowser>False</StartWebBrowser>
     <SearchPath>
     </SearchPath>
@@ -43,19 +43,14 @@
     <TypeScriptCompile Include="00arrowfnctn.ts" />
     <TypeScriptCompile Include="00class.ts" />
     <TypeScriptCompile Include="00enum.ts" />
-    <TypeScriptCompile Include="00sanityts.ts" />
+    <TypeScriptCompile Include="0001sanityts.ts" />
+    <TypeScriptCompile Include="0002namespace.ts" />
     <TypeScriptCompile Include="01inference.ts" />
-    <TypeScriptCompile Include="02typeassertion.ts" />
+    <TypeScriptCompile Include="05typeassertion.ts" />
     <TypeScriptCompile Include="03inference.ts" />
     <TypeScriptCompile Include="04inference.ts" />
-    <TypeScriptCompile Include="09extendexisting.ts" />
     <TypeScriptCompile Include="11Primitives and wrappers.ts" />
     <TypeScriptCompile Include="13getset.ts" />
-    <TypeScriptCompile Include="closuresarerefs.ts" />
-    <TypeScriptCompile Include="closureshallow.ts" />
-    <TypeScriptCompile Include="byreforbyval.ts" />
-    <TypeScriptCompile Include="debugme.ts" />
-    <TypeScriptCompile Include="newClosure.ts" />
     <TypeScriptCompile Include="Scripts\typings\node\node.d.ts" />
     <TypeScriptCompile Include="prototypechain.ts" />
   </ItemGroup>
@@ -65,20 +60,18 @@
     <Folder Include="Scripts\typings\node\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="0001sanityts.js" />
+    <Compile Include="0002namespace.js" />
     <Compile Include="001 interfaces.js" />
     <Compile Include="00arrowfnctn.js" />
     <Compile Include="00class.js" />
     <Compile Include="00enum.js" />
-    <Compile Include="00sanityts.js" />
     <Compile Include="01inference.js" />
-    <Compile Include="02typeassertion.js" />
     <Compile Include="03inference.js" />
     <Compile Include="04inference.js" />
+    <Compile Include="05typeassertion.js" />
     <Compile Include="11Primitives and wrappers.js" />
     <Compile Include="13getset.js" />
-    <Compile Include="closureshallow.js" />
-    <Compile Include="byreforbyval.js" />
-    <Compile Include="newClosure.js" />
     <Compile Include="prototypechain.js" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />

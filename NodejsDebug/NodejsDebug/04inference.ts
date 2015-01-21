@@ -1,4 +1,4 @@
-
+module InferenceWithGenerix{
 
 // Example : inference with generics
 // lets define some interfaces
@@ -47,7 +47,7 @@ interface Ifct3<T extends ImybaseObj, TU extends ImybaseObj> {
   //(inputPara: T, cb: (d: T) => ItestedCondition): U;
 
 }
-
+// please these are just the types!!!
 
 // now some objects that implement the above interfaces
 // we can do this (explictely setting the interface)
@@ -65,15 +65,15 @@ var w = { a: [2, 3, 4] };
 
 // and a function that implements Ifct3
 // so here we type the var t3
-var t3: Ifct3<ImyextendedObj, I2ndmyextendedObj>; //ts knows that the type parameters are constraint
+var f3: Ifct3<ImyextendedObj, I2ndmyextendedObj>; //ts knows that the type parameters are constraint
                                                   //to the base type interface,
  //var t3: Ifct3<number[], I2ndmyextendedObj>; // try this
 
-// and because it is typed already ts knows that the function that is being assigned to t3
+// and because it is typed already ts knows that the function that is being assigned to f3
 // has the above types
-t3 = (d, cb) => {
-  var ret: I2ndmyextendedObj = <any>d;// this is like casting in C
-  ret.sumOverAGreaterZero= cb(d);// push f1 on cb
+f3 = (d, cb) => {
+  var ret: I2ndmyextendedObj = <any>d;// we are returning I2ndmyextendedObj
+  ret.sumOverAGreaterZero= cb(d);// call the callback
   //ret.testedCondition = cb(d);
   return ret;
 };
@@ -83,7 +83,7 @@ t3 = (d, cb) => {
 //try putting {d:[1,2,3,4]} which doesnt fullfill the type requirement
 //but u works
 // ... now we are calling it
-var x =  t3(u, (d) =>{// is the sum over the array a greater zero?
+var x =  f3(u, (d) =>{// is the sum over the array a greater zero?
   var sumoverarry = 0;
 
   sumoverarry= d.a.reduce((prv,cur,i, theAr) => prv+cur); // try changing a => c
@@ -98,15 +98,9 @@ var x =  t3(u, (d) =>{// is the sum over the array a greater zero?
 console.log(x);
 
 
- // another example for an implementation and the need to refactor
- //var y = t3(w, function (d) {
- var y = t3(u, d => {
-   var ret:boolean;
-   //d.b[0] > 0 ? ret = true : null; //w has no b
-   ret = (d.a[0] > 0 ? true : null); //this works
-   return ret;// ret is any here
-   //return {label:"firstelementGreaterZero", condition:ret};
- });
- console.log(y);
 
-console.log('end');
+console.log("end");
+
+
+
+}

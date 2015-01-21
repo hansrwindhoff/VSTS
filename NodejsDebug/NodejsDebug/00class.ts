@@ -1,3 +1,4 @@
+// es6
 module ns {
   var num: number;
   export class Building {
@@ -28,3 +29,5 @@ console.log(myhouse);
 
 
 console.log('end');
+
+
