@@ -1259,7 +1259,7 @@ declare module D3 {
             resume(): ForceLayout;
             stop(): ForceLayout;
             tick(): ForceLayout;
-            on(type: string, listener: () => void ): ForceLayout;
+            on(type: string, listener: (e:any) => void ): ForceLayout;
             drag(): ForceLayout;
         }
 
@@ -3272,7 +3272,7 @@ declare module D3 {
             /**
             * Constructs a new quadtree for the specified array of points.
             */
-            (points: Array<Point>, width: number, height: number): Quadtree;
+            (points: Array<Point>, width?: number, height?: number): Quadtree;
             /**
             * Adds a new point to the quadtree.
             */
