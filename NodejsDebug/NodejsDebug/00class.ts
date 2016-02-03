@@ -29,5 +29,3 @@ console.log(myhouse);
 
 
 console.log('end');
-
-

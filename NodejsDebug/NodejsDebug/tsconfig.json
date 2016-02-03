@@ -1,0 +1,57 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "isolatedModules": false,
+        "jsx": "react",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "noLib": false,
+        "preserveConstEnums": true,
+        "suppressImplicitAnyIndexErrors": true
+    },
+    "filesGlob": [
+        "**/*.ts",
+        "**/*.tsx",
+        "!node_modules/**"
+    ],
+    "compileOnSave": true,
+    "buildOnSave": false,
+    "files": [
+        "0001sanityts.ts",
+        "0002namespace.ts",
+        "000const.ts",
+        "000let.ts",
+        "001 interfaces.ts",
+        "00arrowfnctn.ts",
+        "00class.ts",
+        "00enum.ts",
+        "01inference.ts",
+        "03inference.ts",
+        "04inference.ts",
+        "05typeassertion.ts",
+        "06typeguard.ts",
+        "09extendexisting.ts",
+        "10prototypepolution.ts",
+        "11Primitives and wrappers.ts",
+        "12jsdoc.ts",
+        "13getset.ts",
+        "byreforbyval.ts",
+        "closuresarerefs.ts",
+        "closureshallow.ts",
+        "debugme.ts",
+        "nestedgenerics.ts",
+        "newClosure.ts",
+        "pipeline.ts",
+        "pipeline2.ts",
+        "prototypechain.ts",
+        "Scripts/typings/node/node.d.ts"
+    ],
+    "atom": {
+        "rewriteTsconfig": true
+    }
+}
