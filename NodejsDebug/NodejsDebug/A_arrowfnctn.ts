@@ -1,31 +1,31 @@
 // es6
 module t2 {
-  //lexically scoped  or dynamically scoped
+    //lexically scoped  or dynamically scoped
 
-  class Messenger {
-    message = "Hello World";
+    class Messenger {
+        message = "Hello World";
 
-    start() {
-      setTimeout(
+        start() {
+            setTimeout(
 
-        // () => {
-        //   console.log(this.message);
-        //
-        // }
+                // () => {
+                //   console.log(this.message);
+                //
+                // }
 
-        function () {
-         console.log(this.message);
-        
+                function() {
+                    console.log(this.message);
+
+                }
+
+
+                , 1500);
         }
-
-
-        , 1500);
     }
-  }
 
 
-  var messenger = new Messenger();
-  messenger.start();
+    var messenger = new Messenger();
+    messenger.start();
 
 
 

@@ -1,10 +1,10 @@
-let numorstrg = (parameter: number|string): number|string => {
-  if (typeof parameter === 'string') {
-    return parameter.slice(0, 1);
-  }
-  else {
-    return parameter;
-  }
+let numorstrg = (parameter: number | string): number | string => {
+    if (typeof parameter === 'string') {
+        return parameter.slice(0, 1);
+    }
+    else {
+        return parameter;
+    }
 
 
 }
