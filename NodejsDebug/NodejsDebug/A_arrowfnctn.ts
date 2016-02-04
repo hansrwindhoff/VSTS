@@ -8,15 +8,15 @@ module t2 {
         start() {
             setTimeout(
 
-                // () => {
-                //   console.log(this.message);
-                //
-                // }
-
-                function() {
+                () => {
                     console.log(this.message);
 
                 }
+                //
+                // function() {
+                //     console.log(this.message);
+                //
+                // }
 
 
                 , 1500);

@@ -1,7 +1,7 @@
 {
   "atom": {
     "rewriteTsconfig": true,
-    "formatOnSave": true
+    "formatOnSave": false
   },
   "formatCodeOptions": {
     "indentSize": 4,
@@ -70,6 +70,7 @@
     "monads.ts",
     "nestedgenerics.ts",
     "newClosure.ts",
-    "prototypechain.ts"
+    "prototypechain.ts",
+    "typings/d3/d3.d.ts"
   ]
 }

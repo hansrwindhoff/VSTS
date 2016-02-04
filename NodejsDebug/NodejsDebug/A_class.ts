@@ -5,17 +5,17 @@ module ns {
     material: string;
     floors: number;
   }
-  //
-  // export class House1 extends Building {
-  //   bedrooms: number;
-  // }
 
-
-  export class House1  {
+  export class House1 extends Building {
     bedrooms: number;
-    material: string;
-    floors: number;
   }
+
+	//
+  // export class House1  {
+  //   bedrooms: number;
+  //   material: string;
+  //   floors: number;
+  // }
 
 
   var myHouse = new House1();
