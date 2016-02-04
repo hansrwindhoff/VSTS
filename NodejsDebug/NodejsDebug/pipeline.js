@@ -13,7 +13,7 @@ var Piping;
             this.mapperfnc = mapperfnc;
         }
         return MapPipe;
-    })();
+    }());
     var getExt0 = function (acc) {
         return function (prv, curelement, idx, theAr) {
             var valtempval = acc(curelement);
