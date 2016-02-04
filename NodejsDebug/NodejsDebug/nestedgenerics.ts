@@ -1,6 +1,5 @@
 ﻿
 module Gennest {
-  var readlineSync = require('readline-sync');
 
   interface ILevelZero<TR> {
     ():TR;
@@ -46,6 +45,5 @@ module Gennest {
       "the sum over the values in the array is")
     );
 
-  readlineSync.question('hit enter to exit? :');
 
 }

@@ -25,14 +25,9 @@ class c2 extends c1 {
 
 
 var x = new c2(5);
+console.log(x);
 console.log(x.id1);
 
 
 console.log(x.hasOwnProperty("id1") );
 console.log(x.hasOwnProperty("id2") );
-
-
-
-
-
-

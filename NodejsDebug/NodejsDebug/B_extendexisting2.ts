@@ -17,6 +17,7 @@ module ns {
   class MyDate implements Date {
     private mythisdate: Date;
     constructor() {
+
       this.mythisdate = new Date();
       console.log("in constructor");
     }
@@ -25,12 +26,15 @@ module ns {
     public toTimeString() { return this.mythisdate.toTimeString(); }
     public toLocaleString() { return this.mythisdate.toLocaleString(); }
     public toLocaleDateString() { return this.mythisdate.toLocaleDateString(); }
-    // the extentions
+    // // the extentions, a static method
     public static printConsole() { console.log("printing"); }
+    // and an instance method
+    public  printInfo() { console.log("info ",this.mythisdate); }
 
   }
   var md = new MyDate();
-  console.log(md.toDateString());
+  console.log(md.toDateString());//
   console.log(md.toTimeString());
   MyDate.printConsole();
+  md.printInfo();
 }

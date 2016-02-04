@@ -5,12 +5,20 @@ module ns {
     material: string;
     floors: number;
   }
+  //
+  // export class House1 extends Building {
+  //   bedrooms: number;
+  // }
 
-  export class House extends Building {
+
+  export class House1  {
     bedrooms: number;
+    material: string;
+    floors: number;
   }
 
-  var myHouse = new House();
+
+  var myHouse = new House1();
   myHouse.bedrooms = 3;
   myHouse.floors = 1;
   myHouse.material = "brick";
@@ -21,7 +29,7 @@ module ns {
 
 
 
-var myhouse = new ns.House();
+var myhouse = new ns.House1();
 myhouse.bedrooms = 3;
 myhouse.floors = 1;
 myhouse.material = "brick";
