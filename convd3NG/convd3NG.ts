@@ -19,7 +19,7 @@ module App {
   var mycirclesdirdirectivefactory = () => {
     return {
       restrict: "A",
-      link: (scope// :thisScope 
+      link: (scope// :thisScope
         , elem, attrs: ng.IAttributes) => {
 
 

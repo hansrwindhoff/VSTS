@@ -45,7 +45,7 @@ var width = 960,
     height = 500;
 
 var force = d3.layout.force()
-    .nodes((<any>d3).values(nodes))//hans
+    .nodes((d3).values(<any>nodes))//hans
     .links(<any>links) //hans
     .size([width, height])
     .linkDistance(60)
@@ -55,12 +55,12 @@ var force = d3.layout.force()
 
 
 
-var svg = d3.select("body").append("svg")
+var svgContainer = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height);
 
 // Per-type markers, as they don't inherit styles.
-svg.append("defs").selectAll("marker")
+svgContainer.append("defs").selectAll("marker")
     .data(["suit", "licensing", "resolved"])
   .enter().append("marker")
     .attr("id", function(d) { return d; })
@@ -73,19 +73,19 @@ svg.append("defs").selectAll("marker")
   .append("path")
     .attr("d", "M0,-5L10,0L0,5");
 
-var path = svg.append("g").selectAll("path")
+var path = svgContainer.append("g").selectAll("path")
     .data(force.links())
   .enter().append("path")
     .attr("class", function(d) { return "link " + d.type; })
     .attr("marker-end", function(d) { return "url(#" + d.type + ")"; });
 
-var circle = svg.append("g").selectAll("circle")
+var circle = svgContainer.append("g").selectAll("circle")
     .data(force.nodes())
   .enter().append("circle")
     .attr("r", 6)
     .call(force.drag);
 
-var text = svg.append("g").selectAll("text")
+var text = svgContainer.append("g").selectAll("text")
     .data(force.nodes())
   .enter().append("text")
     .attr("x", 8)

@@ -746,7 +746,7 @@ declare module D3 {
         insert: (name: string, before: string) => Selection;
         remove: () => Selection;
         empty: () => boolean;
-            
+
         data: {
             (values: (data: any, index?: number) => any[], key?: (data: any, index?: number) => string): UpdateSelection;
             (values: any[], key?: (data: any, index?: number) => string): UpdateSelection;
@@ -2546,7 +2546,7 @@ declare module D3 {
             clamp(clamp: boolean): QuantitiveScale;
             /**
             * extend the scale domain to nice round numbers.
-            * 
+            *
             * @param count Optional number of ticks to exactly fit the domain
             */
             nice(count?: number): QuantitiveScale;
@@ -3260,7 +3260,7 @@ declare module D3 {
         }
 
         export interface Quadtree {
-            
+
             /**
             * Constructs a new quadtree for the specified array of points.
             */

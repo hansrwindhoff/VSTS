@@ -1,31 +1,34 @@
 /// <reference path="d3.d.ts"/>
 ///<reference path="angular.d.ts"/>
-//declare var d3;
 var App;
 (function (App) {
     'use strict';
-    //  interface thisScope extends ng.IScope
-    // {
-    // //a first step to annotate the stuff in ths file could be to type the anular scope
-    // }
     var mycirclesdirdirectivefactory = function () {
         return {
             restrict: "A",
-            link: function (scope // :thisScope 
-                , elem, attrs) {
+            link: function (scope, elem, attrs) {
                 var targetEl = document.getElementById(attrs["id"]);
-                var maxRadius = 32; // maximum radius of circle
-                var margin = { top: -maxRadius, right: -maxRadius, bottom: -maxRadius, left: -maxRadius };
+                var maxRadius = 32;
+                var margin = {
+                    top: -maxRadius,
+                    right: -maxRadius,
+                    bottom: -maxRadius,
+                    left: -maxRadius
+                };
                 var width = targetEl.offsetWidth - margin.left - margin.right, height = targetEl.offsetHeight - margin.top - margin.bottom;
-                // start original demo code
                 var nodes = (d3.range(200).map(function () {
-                    return { radius: Math.random() * 12 + 4 };
+                    return {
+                        radius: Math.random() * 12 + 4
+                    };
                 })), root = nodes[0], color = d3.scale.category10();
                 root.radius = 0;
                 root.fixed = true;
                 var force = d3.layout.force().gravity(0.05).charge(function (d, i) {
                     return i ? 0 : -2000;
-                }).nodes(nodes).size([width, height]);
+                }).nodes(nodes).size([
+                    width,
+                    height
+                ]);
                 force.start();
                 var svg = d3.select("#" + attrs["id"]).append("svg").attr("width", width).attr("height", height);
                 svg.selectAll("circle").data(nodes.slice(1)).enter().append("circle").attr("r", function (d) {
@@ -65,7 +68,6 @@ var App;
                         return x1 > nx2 || x2 < nx1 || y1 > ny2 || y2 < ny1;
                     };
                 }
-                // original demo code end
             }
         };
     };
