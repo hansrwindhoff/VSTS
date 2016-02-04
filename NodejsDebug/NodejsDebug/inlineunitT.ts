@@ -7,9 +7,7 @@
 
   };
 
-Function.prototype.where
-
-
+(<any>Function.prototype).where
   =  (function () {
   var fn = this, tests = [].slice.apply(arguments);
   (tests || []).forEach(function (test) {
@@ -28,10 +26,10 @@ Function.prototype.where
   };
 
 
-
-  mysquare.where(
-  [[2], 4], // [[arrayOfArguments], expectedResult]
-  [[3], 9]  // <-- This test will throw an error
-  );
-
-}
+//
+//   mysquare.where(
+//   [[2], 4], // [[arrayOfArguments], expectedResult]
+//   [[3], 9]  // <-- This test will throw an error
+//   );
+//
+ }

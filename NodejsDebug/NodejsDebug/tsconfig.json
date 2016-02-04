@@ -39,20 +39,18 @@
         "B_inference3.ts",
         "B_interfaces.ts",
         "B_jsdoc.ts",
-        "B_Primitives and wrappers.ts",
+        "B_primitives and wrappers.ts",
         "B_prototypepolution.ts",
         "B_sanityts.ts",
         "B_stringliteraltypes.ts",
         "B_typeassertion2.ts",
         "B_typeguard.ts",
-        "byreforbyval.ts",
         "closuresarerefs.ts",
         "inlineunitT.ts",
         "monads.ts",
         "nestedgenerics.ts",
         "newClosure.ts",
-        "prototypechain.ts",
-        "Scripts/typings/node/node.d.ts"
+        "prototypechain.ts"
     ],
     "atom": {
         "rewriteTsconfig": true

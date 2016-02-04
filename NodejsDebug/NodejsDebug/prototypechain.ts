@@ -6,17 +6,17 @@
   f1.prototype.owner = "jo";
   console.log(f1.prototype.owner);
 
-
-  f1.__proto__.owner2 = "jack";
-  console.log(f1.owner2);
-
-  var f2 =new Object;
-  f2.__proto__.owner2 = "jill";
-  console.log(f2.owner2);
-
-
-  var f3 = new Object();
-  console.log(f3.owner2);
+	//
+  // f1.__proto__.owner2 = "jack";
+  // console.log(f1.owner2);
+	//
+  // var f2 =new Object;
+  // f2.__proto__.owner2 = "jill";
+  // console.log(f2.owner2);
+	//
+	//
+  // var f3 = new Object();
+  // console.log(f3.owner2);
 
 
   // check these in watch window
