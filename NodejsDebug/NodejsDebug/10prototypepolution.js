@@ -10,7 +10,7 @@ var c1 = (function () {
         this.value = 42;
     }
     return c1;
-})();
+}());
 var c2 = (function (_super) {
     __extends(c2, _super);
     function c2(id2) {
@@ -19,7 +19,7 @@ var c2 = (function (_super) {
         this.id2 = id2;
     }
     return c2;
-})(c1);
+}(c1));
 var x = new c2(5);
 console.log(x.id1);
 console.log(x.hasOwnProperty("id1"));

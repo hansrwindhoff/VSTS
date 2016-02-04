@@ -22,12 +22,18 @@
     "compileOnSave": true,
     "buildOnSave": false,
     "files": [
+        "0001sanityts.ts",
+        "0002namespace.ts",
+        "0003forof.ts",
         "000const.ts",
         "000let.ts",
         "00class.ts",
+        "00destructuring.ts",
         "00enum.ts",
         "05typeassertion.ts",
         "06typeguard.ts",
+        "07stringliteraltypes.ts",
+        "08asyncawait.ts",
         "11Primitives and wrappers.ts"
     ],
     "atom": {

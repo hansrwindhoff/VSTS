@@ -11,7 +11,7 @@ var ns;
         MyDate.prototype.toLocaleDateString = function () { return this.mythisdate.toLocaleDateString(); };
         MyDate.printConsole = function () { console.log("printing"); };
         return MyDate;
-    })();
+    }());
     var md = new MyDate();
     console.log(md.toDateString());
     console.log(md.toTimeString());

@@ -1,8 +1,8 @@
 var san;
 (function (san) {
     var t0 = "3" + 2;
-    var t1 = "3";
-    var t2 = "3";
+    var t1 = "3" + 3 - 2;
+    var t2 = "3" - 2 + 2;
     console.log(t0);
     console.log(t1);
     console.log(t2);

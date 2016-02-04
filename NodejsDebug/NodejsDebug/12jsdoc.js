@@ -14,7 +14,7 @@ var My;
             SomeClass.prototype._someOtherMethod = function (v1) {
             };
             return SomeClass;
-        })();
+        }());
         Namespace.SomeClass = SomeClass;
     })(Namespace = My.Namespace || (My.Namespace = {}));
 })(My || (My = {}));

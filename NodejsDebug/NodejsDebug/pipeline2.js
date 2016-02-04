@@ -1,3 +1,4 @@
+"use strict";
 var assert = require("assert");
 var MapPipeline;
 (function (MapPipeline) {
@@ -19,7 +20,7 @@ var MapPipeline;
             };
         };
         return MapPipe;
-    })();
+    }());
     var zeroPadX = function (num, size) {
         var s = "000000000" + num.toString(16);
         return s.substr(s.length - size);

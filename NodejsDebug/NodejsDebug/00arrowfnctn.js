@@ -13,7 +13,7 @@ var t2;
             }, 500);
         };
         return Messenger;
-    })();
+    }());
     var messenger = new Messenger();
     messenger.start();
 })(t2 || (t2 = {}));
