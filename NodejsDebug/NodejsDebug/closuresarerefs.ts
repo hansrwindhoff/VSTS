@@ -3,7 +3,7 @@
   var complex = { a: 42, b: 43 };
   var fn1 = () => {
     complex.a++;
-    console.log(complex.a);
+    console.log(complex);
   };
   fn1();
   fn1();
