@@ -19,7 +19,7 @@
   },
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
+    "module": "amd",
     "moduleResolution": "node",
     "isolatedModules": false,
     "jsx": "react",
@@ -54,6 +54,8 @@
     "B_enum.ts",
     "B_extendexisting.ts",
     "B_extendexisting2.ts",
+    "B_import.ts",
+    "B_importedtobe.ts",
     "B_inference.ts",
     "B_inference2.ts",
     "B_inference3.ts",
@@ -71,6 +73,6 @@
     "nestedgenerics.ts",
     "newClosure.ts",
     "prototypechain.ts",
-    "typings/d3/d3.d.ts"
+    "regex.ts"
   ]
 }
