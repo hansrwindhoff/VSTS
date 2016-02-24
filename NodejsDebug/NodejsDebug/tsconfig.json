@@ -29,6 +29,7 @@
     "noImplicitAny": false,
     "removeComments": true,
     "noLib": false,
+    "sourceMap": true,
     "preserveConstEnums": true,
     "suppressImplicitAnyIndexErrors": true
   },
@@ -73,6 +74,6 @@
     "nestedgenerics.ts",
     "newClosure.ts",
     "prototypechain.ts",
-    "regex.ts"
+    "B_regex.ts"
   ]
 }
