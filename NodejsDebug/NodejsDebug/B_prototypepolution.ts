@@ -1,3 +1,5 @@
+/* @flow */
+// this make flow analyse this file!!!
 class c1 {
   value: number;
   constructor(public id1 = 1) {

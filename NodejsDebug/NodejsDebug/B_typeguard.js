@@ -1,3 +1,5 @@
+/* @flow */
+// this make flow analyse this file!!!
 var numorstrg = function (parameter) {
     if (typeof parameter === 'string') {
         return parameter.slice(0, 1);

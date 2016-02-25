@@ -1,3 +1,5 @@
+/* @flow */
+// this make flow analyse this file!!!
 var ns;
 (function (ns) {
     var MyDate = (function () {
@@ -9,12 +11,14 @@ var ns;
         MyDate.prototype.toTimeString = function () { return this.mythisdate.toTimeString(); };
         MyDate.prototype.toLocaleString = function () { return this.mythisdate.toLocaleString(); };
         MyDate.prototype.toLocaleDateString = function () { return this.mythisdate.toLocaleDateString(); };
+        // // the extentions, a static method
         MyDate.printConsole = function () { console.log("printing"); };
+        // and an instance method
         MyDate.prototype.printInfo = function () { console.log("info ", this.mythisdate); };
         return MyDate;
     }());
     var md = new MyDate();
-    console.log(md.toDateString());
+    console.log(md.toDateString()); //
     console.log(md.toTimeString());
     MyDate.printConsole();
     md.printInfo();

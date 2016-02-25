@@ -1,3 +1,5 @@
+/* @flow */
+// this make flow analyse this file!!!
 
 // optional parameter
 var fn2 = (parameter?: number) => {

@@ -1,3 +1,6 @@
+/* @flow */
+// this make flow analyse this file!!!
+// optional parameter
 var fn2 = function (parameter) {
     if (parameter) {
         console.log(parameter);
@@ -7,6 +10,7 @@ var fn2 = function (parameter) {
     }
     return true;
 };
+// default parameter
 var fn3 = function (parameter) {
     if (parameter === void 0) { parameter = 42; }
     console.log(parameter);

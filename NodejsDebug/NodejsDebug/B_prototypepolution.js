@@ -3,10 +3,13 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
+/* @flow */
+// this make flow analyse this file!!!
 var c1 = (function () {
     function c1(id1) {
         if (id1 === void 0) { id1 = 1; }
         this.id1 = id1;
+        // code...
         this.value = 42;
     }
     return c1;
@@ -17,6 +20,8 @@ var c2 = (function (_super) {
         if (id2 === void 0) { id2 = 0; }
         _super.call(this);
         this.id2 = id2;
+        // code...
+        //	super.x1 = 3;
     }
     return c2;
 }(c1));

@@ -1,3 +1,6 @@
+/* @flow */
+// this make flow analyse this file!!!
+// es6
 var t2;
 (function (t2) {
     var HaveAGetSet = (function () {

@@ -1,3 +1,5 @@
+/* @flow */
+// this make flow analyse this file!!!
 module dest {
   "use strict"
   var getSomeObject = () => { return { a: 10, b: 20, c: 30 }; }

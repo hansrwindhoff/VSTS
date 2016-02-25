@@ -1,4 +1,5 @@
 function newClosure(someNum, someRef) {
+    // Local variables that end up within closure
     var num = someNum;
     var anArray = [1, 2, 3];
     someRef.someVar++;
@@ -14,8 +15,8 @@ function newClosure(someNum, someRef) {
 var obj = { someVar: 4 };
 var fn1 = newClosure(4, obj);
 var fn4 = newClosure(5, obj);
-fn1(1);
-fn4(1);
-fn1(2);
-fn4(2);
+fn1(1); // num: 5; anArray: 1,2,3,5; ref.someVar: 4;
+fn4(1); // num: 6; anArray: 1,2,3,6; ref.someVar: 4;
+fn1(2); // num: 7; anArray: 1,2,3,5,7; ref.someVar: 5;
+fn4(2); // num: 8; anArray: 1,2,3,6,8; ref.someVar: 5;
 //# sourceMappingURL=newClosure.js.map

@@ -1,3 +1,7 @@
+/* @flow */
+// this make flow analyse this file!!!
+
+
 module ns65 {// Example : reverse inference , structural typing
   var t1 = { dx: 122, dz: 34534, dy: 088 }; // this works
 

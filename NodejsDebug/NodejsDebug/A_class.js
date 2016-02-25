@@ -3,6 +3,9 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
+/* @flow */
+// this make flow analyse this file!!!
+// es6
 var ns;
 (function (ns) {
     var num;
@@ -20,6 +23,12 @@ var ns;
         return House1;
     }(Building));
     ns.House1 = House1;
+    //
+    // export class House1  {
+    //   bedrooms: number;
+    //   material: string;
+    //   floors: number;
+    // }
     var myHouse = new House1();
     myHouse.bedrooms = 3;
     myHouse.floors = 1;

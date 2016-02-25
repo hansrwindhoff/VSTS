@@ -27,7 +27,7 @@
     "emitDecoratorMetadata": true,
     "declaration": false,
     "noImplicitAny": false,
-    "removeComments": true,
+    "removeComments": false,
     "noLib": false,
     "sourceMap": true,
     "preserveConstEnums": true,

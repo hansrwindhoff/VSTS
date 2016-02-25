@@ -1,3 +1,5 @@
+/* @flow */
+// this make flow analyse this file!!!
 // es6
 
 module t2 {

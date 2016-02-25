@@ -1,3 +1,5 @@
+/* @flow */
+// this make flow analyse this file!!!
 var t1b;
 (function (t1b) {
     var complex = { a: 42, b: 43 };

@@ -1,4 +1,6 @@
 // es6
+/* @flow */
+// this make flow analyse this file!!!
 module t2 {
     //lexically scoped  or dynamically scoped
 

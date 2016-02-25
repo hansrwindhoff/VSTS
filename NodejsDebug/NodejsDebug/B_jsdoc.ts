@@ -1,3 +1,6 @@
+/* @flow */
+// this make flow analyse this file!!!
+
 /**
 Explicitly name everything. For example:
 @namespace My.Namespace

@@ -1,3 +1,5 @@
+/* @flow */
+// this make flow analyse this file!!!
 var nsDate;
 (function (nsDate) {
     var RichDate = (function () {
@@ -10,7 +12,7 @@ var nsDate;
     var x = new Date();
     console.log(x.MinValue);
     Date['MinValue'] = new Date(0);
-    var y = Date;
+    var y = Date; // We aren't using an instance
     console.log(y.MinValue);
     var t2;
     var t3 = {};

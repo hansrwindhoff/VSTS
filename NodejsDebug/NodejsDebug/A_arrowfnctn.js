@@ -1,5 +1,9 @@
+// es6
+/* @flow */
+// this make flow analyse this file!!!
 var t2;
 (function (t2) {
+    //lexically scoped  or dynamically scoped
     var Messenger = (function () {
         function Messenger() {
             this.message = "Hello World";

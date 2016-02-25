@@ -19,7 +19,7 @@ var m1 = new Maybe(1);
 var m2 = new Maybe(2);
 var m3 = new Maybe(undefined);
 var liftM2Add = Maybe.lift2(add);
-console.log(liftM2Add(m1, m2).ret());
-console.log(liftM2Add(m3, m2).ret());
-console.log(liftM2Add(m1, m3).ret());
+console.log(liftM2Add(m1, m2).ret()); //3
+console.log(liftM2Add(m3, m2).ret()); //undefined
+console.log(liftM2Add(m1, m3).ret()); //undefined
 //# sourceMappingURL=monads.js.map

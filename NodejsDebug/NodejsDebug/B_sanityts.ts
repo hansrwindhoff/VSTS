@@ -1,3 +1,5 @@
+/* @flow */
+// this make flow analyse this file!!!
 module san {
 
   var t0 = "3" + 2;

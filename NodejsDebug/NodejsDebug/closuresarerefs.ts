@@ -1,4 +1,6 @@
-﻿module t1b {
+﻿/* @flow */
+// this make flow analyse this file!!!
+module t1b {
 
   var complex = { a: 42, b: 43 };
   var fn1 = () => {

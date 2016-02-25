@@ -1,3 +1,5 @@
+/* @flow */
+// this make flow analyse this file!!!
 var CustomersType;
 (function (CustomersType) {
     CustomersType[CustomersType["Deadbeat"] = 0] = "Deadbeat";
