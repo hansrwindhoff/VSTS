@@ -1,4 +1,4 @@
-/* @flow */
+/* @flo  w */
 // this make flow analyse this file!!!
 
 module ns {

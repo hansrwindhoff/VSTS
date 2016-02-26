@@ -1,5 +1,5 @@
 // es6
-/* @flow */
+/* @ flow */
 // this make flow analyse this file!!!
 var t2;
 (function (t2) {

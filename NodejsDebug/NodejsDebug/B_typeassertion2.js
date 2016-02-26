@@ -1,4 +1,4 @@
-/* @flow */
+/* @fl ow */
 // this make flow analyse this file!!!
 var Typeassertions;
 (function (Typeassertions) {

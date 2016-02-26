@@ -1,4 +1,4 @@
-/* @flow */
+/* @ flow */
 // this make flow analyse this file!!!
 define(["require", "exports"], function (require, exports) {
     "use strict";

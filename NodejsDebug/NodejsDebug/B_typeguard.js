@@ -1,4 +1,4 @@
-/* @flow */
+/* @fl ow */
 // this make flow analyse this file!!!
 var numorstrg = function (parameter) {
     if (typeof parameter === 'string') {

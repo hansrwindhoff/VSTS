@@ -29,6 +29,26 @@
 			"outDir": null,
 			"localRoot": "${workspaceRoot}",
 			"remoteRoot": null
-		}
+		},
+        {
+            "name": "Attach to chrome",
+            "type": "chrome",
+            "request": "attach",
+            "port": 9222
+        },
+         {
+            "name": "Launch B_import.html",
+            "type": "chrome",
+            "request": "launch",
+            "file": "B_import.html"
+        },
+        {
+            "name": "Launch localhost with sourcemaps",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost/mypage.html",
+            "webRoot": "./app/files",
+            "sourceMaps": true
+        }
 	]
 }

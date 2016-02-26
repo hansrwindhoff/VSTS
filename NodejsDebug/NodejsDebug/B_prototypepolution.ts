@@ -1,4 +1,4 @@
-/* @flow */
+/* @fl ow */
 // this make flow analyse this file!!!
 class c1 {
   value: number;

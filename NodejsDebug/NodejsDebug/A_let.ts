@@ -1,5 +1,5 @@
 
-/* @flow */
+/* @fl ow */
 // this make flow analyse this file!!!
 module m42 {
 

@@ -1,4 +1,4 @@
-/* @flow */
+/* @f low */
 // this make flow analyse this file!!!
 var ns65;
 (function (ns65) {

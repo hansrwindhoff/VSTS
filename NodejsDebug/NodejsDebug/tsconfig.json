@@ -74,6 +74,7 @@
     "nestedgenerics.ts",
     "newClosure.ts",
     "prototypechain.ts",
-    "B_regex.ts"
+    "B_regex.ts",
+    "flowlibs.ts"
   ]
 }

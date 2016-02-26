@@ -1,4 +1,4 @@
-/* @flow */
+/* @fflow */
 // this make flow analyse this file!!!
 
 //

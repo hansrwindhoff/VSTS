@@ -1,4 +1,4 @@
-/* @flow */
+/* @ flow */
 // this make flow analyse this file!!!
 // es6
 var t2;

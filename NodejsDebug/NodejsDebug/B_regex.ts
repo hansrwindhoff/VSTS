@@ -1,4 +1,4 @@
-/* @flow */
+/* @fl ow */
 // this make flow analyse this file!!!
 var regex = /[a-z]$/i; // okay
 //var regex2 = /[a-z/\]$/i; // // Error: Check format of expression term, remove the backslash

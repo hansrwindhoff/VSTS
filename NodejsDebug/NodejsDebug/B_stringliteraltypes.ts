@@ -1,4 +1,4 @@
-/* @flow */
+/* @f low */
 // this make flow analyse this file!!!
 interface AnimationOptions {
     deltaX: number;

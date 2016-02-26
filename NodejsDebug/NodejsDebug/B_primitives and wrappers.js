@@ -1,4 +1,4 @@
-/* @flow */
+/* @fflow */
 // this make flow analyse this file!!!
 //
 // var t1= "hello".newprop= 1;

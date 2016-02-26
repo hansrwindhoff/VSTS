@@ -1,4 +1,4 @@
-/* @flow */
+/* @fl ow */
 // this make flow analyse this file!!!
 let numorstrg = (parameter: number | string): number | string => {
     if (typeof parameter === 'string') {
