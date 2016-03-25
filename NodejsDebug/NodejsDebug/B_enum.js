@@ -1,4 +1,4 @@
-/* @fl ow */
+/* @flow */
 // this make flow analyse this file!!!
 var CustomersType;
 (function (CustomersType) {

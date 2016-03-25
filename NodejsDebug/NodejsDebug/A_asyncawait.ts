@@ -1,4 +1,4 @@
-/* @ flow */
+/* @flow */
 // this make flow analyse this file!!!
 // set compile target to ES6 in tsconfig.json
 "use strict";

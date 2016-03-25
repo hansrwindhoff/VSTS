@@ -1,3 +1,4 @@
+/* @flow */
 var m5;
 (function (m5) {
     function f1() {

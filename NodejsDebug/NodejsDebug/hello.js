@@ -1,5 +1,5 @@
 
-
+/* @flow */
 function foo(x) {
   return x*10;
 }

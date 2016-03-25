@@ -1,4 +1,4 @@
-/* @flo w */
+/* @flow */
 // this make flow analyse this file!!!
 // optional parameter
 var fn2 = function (parameter) {

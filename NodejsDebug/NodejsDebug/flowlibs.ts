@@ -1,3 +1,4 @@
+
 /* @flow */
 /// <reference path="typings/tsd.d.ts" />
 
@@ -16,10 +17,10 @@ function vegetarianPizzas() {
 
 
 
-// function foo(x) {
-//     return x * 10;
-// }
-// foo("Hello, world!");
+function foo(x) {
+    return x * 10;
+}
+foo("Hello, world!");
 
 
 

@@ -1,4 +1,4 @@
-﻿
+﻿/* @flow */
 module Gennest {
 
   interface ILevelZero<TR> {

@@ -1,4 +1,4 @@
-/* @f low */
+/* @flow */
 // this make flow analyse this file!!!
 module dest {
   "use strict"

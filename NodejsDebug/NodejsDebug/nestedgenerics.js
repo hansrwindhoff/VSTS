@@ -1,3 +1,4 @@
+/* @flow */
 var Gennest;
 (function (Gennest) {
     var f1;

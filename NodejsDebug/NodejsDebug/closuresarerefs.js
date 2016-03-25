@@ -1,4 +1,4 @@
-/* @f low */
+/* @flow */
 // this make flow analyse this file!!!
 var t1b;
 (function (t1b) {

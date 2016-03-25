@@ -1,5 +1,5 @@
+/* @flow */
 // es6
-/* @ flow */
 // this make flow analyse this file!!!
 var t2;
 (function (t2) {
@@ -9,9 +9,12 @@ var t2;
             this.message = "Hello World";
         }
         Messenger.prototype.start = function () {
-            var _this = this;
-            setTimeout(function () {
-                console.log(_this.message);
+            setTimeout(
+            // () => {
+            //     console.log(this.message);
+            // }
+            function () {
+                console.log(this.message);
             }, 1500);
         };
         return Messenger;

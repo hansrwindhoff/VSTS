@@ -1,3 +1,6 @@
+/* @flow */
+
+
 function newClosure(someNum, someRef) {
     // Local variables that end up within closure
     var num = someNum;

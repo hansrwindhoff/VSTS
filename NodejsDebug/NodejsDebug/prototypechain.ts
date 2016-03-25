@@ -1,4 +1,6 @@
-﻿module m5 {
+﻿
+/* @flow */
+module m5 {
 
   function f1 (){
 

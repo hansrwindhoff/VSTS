@@ -1,3 +1,4 @@
+/* @flow */
 var Maybe;
 Maybe = function (value) {
     this.value = value;
